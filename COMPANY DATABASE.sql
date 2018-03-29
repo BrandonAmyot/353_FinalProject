@@ -2,42 +2,42 @@ CREATE Database Company;
 use Company;
 
 CREATE TABLE Employee (
-	empName		varchar(20),
-	empDOB			Date,
-	empSIN 			int KEY,
-	empAddress	varchar(20),
-	phoneNum		varchar(20)	unique,
-	salary				int,
-	empGender		char,
-	deptName		varchar(20)
+	empName		varchar(50),
+	empDOB		Date,
+	empSIN 		int KEY,
+	empAddress	varchar(50),
+	phoneNum	varchar(50)	unique,
+	salary		int,
+	empGender	char,
+	deptName	varchar(50)
 );
 
 CREATE TABLE Dependent (
-	dependentName		varchar(20),
+	dependentName		varchar(50),
 	dependentDOB		Date,
-	dependentSIN			int KEY,
-	empSIN 					int,
-	dependentGender	char
+	dependentSIN		int KEY,
+	empSIN 				int,
+	dependentGender		char
 );
 
 CREATE TABLE Department (
-	deptName				varchar(20) KEY,
+	deptName			varchar(50) KEY,
 	deptNumber			int unique,
 	deptManagerSIN		int unique,
 	managerStartDate	date
 );
 
 CREATE TABLE Projects (
-	projName		varchar(20) unique,
-    projID				int KEY,
-    projLocation 	varchar(20),
-    deptNumber 	varchar(20),
+	projName		varchar(50) unique,
+    projID			int KEY,
+    projLocation 	varchar(50),
+    deptName 		varchar(50),
     projLeaderSIN	int
 );
 
 CREATE TABLE WorksOn (
-	empSIN			int,
-    projID				int,
+	empSIN		int,
+    projID		int,
     hoursWorked	int,
     key (empSIN, projID)
 );
@@ -45,14 +45,21 @@ CREATE TABLE WorksOn (
 # employee getting fired, update all tables
 ALTER TABLE Department ADD CONSTRAINT fk_SIN foreign key (deptManagerSIN) references Employee (empSIN) on delete set null;
 # ALTER TABLE Department ADD CONSTRAINT fk_SIN foreign key (managerStartDate) references Employee (empSIN) on delete set null;
-ALTER TABLE WorksOn ADD CONSTRAINT fk_name foreign key (empSIN) references Employee (empSIN) on delete cascade;
 ALTER TABLE Dependent ADD CONSTRAINT fk_dependent foreign key (empSIN) references Employee (empSIN) on delete cascade;
+ALTER TABLE Projects ADD CONSTRAINT fk_projSIN foreign key (projLeaderSIN) references Employee (empSIN) on delete set null;
 
-# 
+# Department name is changed or closed down, update all tables
+ALTER TABLE projects ADD CONSTRAINT fk_projDeptName FOREIGN KEY (deptName) references department (deptName) on delete set null on update cascade;
+ALTER TABLE employee ADD CONSTRAINT fk_empDeptName FOREIGN KEY (deptName) references department (deptName) on delete set null on update cascade;
 
 
-insert into employee values ('John Edward', DATE '1960-01-01', 123321111, '67 Ontario', 9991119999, 50000, 'M', 0001);
-insert into Department values ('Finance', 0001, 123321111, DATE '2010-01-01');
+#---------------------------------------------------------------------------------------------------------------------
 
-delete from Employee where empSIN = 123321111;
+
+
+
+
+
+
+
 
