@@ -31,7 +31,7 @@ CREATE TABLE Projects (
 	projName		varchar(20) unique,
     projID				int KEY,
     projLocation 	varchar(20),
-    deptNumber 	varchar(20),
+    deptName 	varchar(20),
     projLeaderSIN	int
 );
 
@@ -48,10 +48,16 @@ ALTER TABLE Department ADD CONSTRAINT fk_SIN foreign key (deptManagerSIN) refere
 ALTER TABLE WorksOn ADD CONSTRAINT fk_name foreign key (empSIN) references Employee (empSIN) on delete cascade;
 ALTER TABLE Dependent ADD CONSTRAINT fk_dependent foreign key (empSIN) references Employee (empSIN) on delete cascade;
 
-# 
+# project shutting down, update all tables (remove project from WorksOn)
+ALTER TABLE WorksOn ADD CONSTRAINT fk_proj foreign key (projID) references Projects (projID) on delete cascade;
+
+# Department name is changed or closed down, update all tables
+ALTER TABLE projects ADD CONSTRAINT fk_projDeptName FOREIGN KEY (deptName) references department (deptName) on delete cascade; 
+# dept is deleted, the projects get deleted
+ALTER TABLE employee ADD CONSTRAINT fk_empDeptName FOREIGN KEY (deptName) references department (deptName) on delete set null;
 
 
-insert into employee values ('John Edward', DATE '1960-01-01', 123321111, '67 Ontario', 9991119999, 50000, 'M', 0001);
+insert into employee values ('John Edward', DATE '1960-01-01', 123321111, '67 Ontario', '999-111-9999', 50000, 'M', 'Finance');
 insert into Department values ('Finance', 0001, 123321111, DATE '2010-01-01');
 
 delete from Employee where empSIN = 123321111;
