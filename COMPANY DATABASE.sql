@@ -60,5 +60,3 @@ ALTER TABLE employee ADD CONSTRAINT fk_empDeptName FOREIGN KEY (deptName) REFERE
 
 
 
-
-
