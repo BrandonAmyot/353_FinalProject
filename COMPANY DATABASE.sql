@@ -32,7 +32,6 @@ CREATE TABLE Department (
 CREATE TABLE DeptLocations (
 	deptName	VARCHAR(30),
 	deptLocation	VARCHAR(30),
-	PRIMARY KEY (deptName, deptLocation)
 );
 
 CREATE TABLE Projects (
