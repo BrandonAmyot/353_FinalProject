@@ -9,3 +9,4 @@ ALTER TABLE Projects ADD CONSTRAINT fk_projSIN FOREIGN KEY (projLeaderSIN) REFER
 # Department name is changed or closed down, update all tables
 ALTER TABLE projects ADD CONSTRAINT fk_projDeptName FOREIGN KEY (deptName) REFERENCES department (deptName) ON DELETE SET NULL ON UPDATE CASCADE;
 ALTER TABLE employee ADD CONSTRAINT fk_empDeptName FOREIGN KEY (deptName) REFERENCES department (deptName) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE DeptLocations ADD CONSTRAINT fk_locationsDeptName FOREIGN KEY (deptName) REFERENCES department (deptName) ON DELETE CASCADE ON UPDATE CASCADE;
