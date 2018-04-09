@@ -29,6 +29,12 @@ CREATE TABLE Department (
 	managerStartDate	DATE
 );
 
+CREATE TABLE DeptLocations (
+	deptName	VARCHAR(30),
+	deptLocation	VARCHAR(30),
+	PRIMARY KEY (deptName, deptLocation)
+);
+
 CREATE TABLE Projects (
 	projName		VARCHAR(50) UNIQUE,
     projID				INT PRIMARY KEY,
