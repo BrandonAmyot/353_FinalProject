@@ -31,6 +31,6 @@ INSERT INTO employee VALUES ('Darryl Philbin', DATE '1971-02-10', 0017, '12 Jack
 INSERT INTO employee VALUES ('Roy Anderson', DATE '1973-06-07', 0018, '154 Park Ave', '514-205-2820', 21, 'M', 'Shipping');
 INSERT INTO employee VALUES ('Madge Madsen', DATE '1973-09-10', 0019, '743 Ford St', '514-297-1205', 20, 'F', 'Shipping');
 
--- INSERT INTO employee VALUES ('herm', DATE '1973-09-10', 0020, '743 Ford St', '514-297-1000', 20, 'H', 'Shipping');
+-- INSERT INTO employee VALUES ('herm', DATE '1973-09-10', 0020, '743 Ford St', '514-297-1000', -4, 'H', 'Shipping');
 -- 
 -- delete from employee where empSIN = 0020;
