@@ -9,5 +9,3 @@ INSERT INTO projects VALUES ('Gone', 105, 'ottawa', 'complete', 'Shipping', 0018
 INSERT INTO projects VALUES ('SellSell', 106, 'montreal', 'preliminary', 'Sales', 0006);
 INSERT INTO projects VALUES ('FedEx', 107, 'saskatoon', 'advanced', 'Shipping', 0019);
 INSERT INTO projects VALUES ('TopNotch', 108, 'new york', 'intermediate', 'Quality Assurance', 0011);
-
-INSERT INTO projects VALUES ('Bottomnotch', 109, 'new york', 'beginning', 'Quality Assurance', 0011);

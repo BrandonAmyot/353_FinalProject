@@ -1,7 +1,5 @@
 USE Company;
 
-
-
 INSERT INTO DeptLocations VALUES ('Sales', 'montreal');
 INSERT INTO DeptLocations VALUES ('Accounting', 'toronto');
 INSERT INTO DeptLocations VALUES ('Accounting', 'chicago');
