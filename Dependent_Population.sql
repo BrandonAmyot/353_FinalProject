@@ -1,4 +1,4 @@
-USE Company;
+USE wyc353_4;
 
 INSERT INTO dependent VALUES ('Cecelia Halpert', DATE '2010-04-03', 0103, 0003, 'F');
 INSERT INTO dependent VALUES ('Philip Halpert', DATE '2012-05-12', 0203, 0003, 'M');

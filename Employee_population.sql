@@ -1,4 +1,4 @@
-USE company;
+USE wyc353_4;
 
 # Sales
 INSERT INTO employee VALUES ('Michael Scott', DATE '1964-05-03', 0001, '12 Oak St', '514-111-1243', 28, 'M', 'Sales');

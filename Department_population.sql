@@ -1,4 +1,4 @@
-USE Company;
+USE wyc353_4;
 
 INSERT INTO department VALUES ('Sales', 1, 0001, DATE '1992-06-05');
 INSERT INTO department VALUES ('Accounting', 2, 0007, DATE '2003-12-07');

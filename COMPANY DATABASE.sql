@@ -1,7 +1,7 @@
-CREATE DATABASE Company;
-USE Company;
+CREATE DATABASE wyc353_4;
+USE wyc353_4;
 
-CREATE TABLE Employee (
+CREATE TABLE employee (
 	empName		VARCHAR(30),
 	empDOB			DATE,
 	empSIN 			INT PRIMARY KEY,
@@ -23,7 +23,7 @@ CREATE TRIGGER check_hourlySalary BEFORE INSERT ON employee
 	END//
 DELIMITER ;
 
-CREATE TABLE Dependent (
+CREATE TABLE dependent (
 	dependentName		VARCHAR(30),
 	dependentDOB		DATE,
 	dependentSIN			INT PRIMARY KEY,
@@ -32,20 +32,20 @@ CREATE TABLE Dependent (
    CONSTRAINT chk_gender CHECK (dependentGender IN ('M', 'F'))
 );
 
-CREATE TABLE Department (
+CREATE TABLE department (
 	deptName				VARCHAR(30) PRIMARY KEY,
 	deptNumber			INT UNIQUE,
 	deptManagerSIN		INT UNIQUE,
 	managerStartDate	DATE
 );
 
-CREATE TABLE DeptLocations (
+CREATE TABLE deptLocations (
 	deptName		VARCHAR(30),
 	deptLocation	VARCHAR(30),
 	PRIMARY KEY (deptName, deptLocation)
 );
 
-CREATE TABLE Projects (
+CREATE TABLE projects (
 	projName		VARCHAR(50) UNIQUE,
     projID				INT PRIMARY KEY,
     projLocation 	VARCHAR(30),
@@ -55,7 +55,7 @@ CREATE TABLE Projects (
    CONSTRAINT chk_phase CHECK (projPhase IN ('preliminary', 'intermediate', 'advanced', 'complete'))
 );
 
-CREATE TABLE WorksOn (
+CREATE TABLE worksOn (
 	empSIN			INT,
     projID				INT,
     hoursWorked	INT,

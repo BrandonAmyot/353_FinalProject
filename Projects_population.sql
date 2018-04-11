@@ -1,4 +1,4 @@
-USE Company;
+USE wyc353_4;
 
 INSERT INTO projects VALUES ('salesForce', 100, 'montreal', 'advanced', 'Sales', 0002);
 INSERT INTO projects VALUES ('MoneyProject', 101, 'toronto', 'complete', 'Accounting', 0008);
