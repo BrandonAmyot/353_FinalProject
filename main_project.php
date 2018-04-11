@@ -44,7 +44,7 @@ A PHP script to access the Project Mangement Database through MySQL
 		$user = 'root';
 		$password='';
 	
-		$db = 'ProjectManagementSystem';
+		$db = 'Company';
 		
 		// Connect to MySQL
 		$sqlConnection=mysqli_connect("localhost", $user, $password, $db);
@@ -106,7 +106,7 @@ A PHP script to access the Project Mangement Database through MySQL
 
 
 	else {
-		print "Nothing to mathc, your query returned no results. <br />";
+		print "Nothing to match, your query returned no results. <br />";
 	}
 	print "</table>";
 	
