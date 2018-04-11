@@ -9,8 +9,8 @@ CREATE TABLE Employee (
 	phoneNum		VARCHAR(12) UNIQUE,
 	hourlySalary	INT,
 	empGender		CHAR,
-	deptName		VARCHAR(30)
-    -- CONSTRAINT chk_gender CHECK (empGender IN ('M', 'F'))
+	deptName		VARCHAR(30),
+    CONSTRAINT chk_gender CHECK (empGender IN ('M', 'F'))
 );
 
 DELIMITER //
@@ -28,8 +28,8 @@ CREATE TABLE Dependent (
 	dependentDOB		DATE,
 	dependentSIN			INT PRIMARY KEY,
 	empSIN 					INT,
-	dependentGender	CHAR
- --   CONSTRAINT chk_gender CHECK (dependentGender IN ('M', 'F'))
+	dependentGender	CHAR,
+   CONSTRAINT chk_gender CHECK (dependentGender IN ('M', 'F'))
 );
 
 CREATE TABLE Department (
@@ -51,8 +51,8 @@ CREATE TABLE Projects (
     projLocation 	VARCHAR(30),
     projPhase		VARCHAR(50),
     deptName 		VARCHAR(30),
-    projLeaderSIN	INT
---    CONSTRAINT chk_phase CHECK (projPhase IN ('preliminary', 'intermediate', 'advanced', 'complete'))
+    projLeaderSIN	INT,
+   CONSTRAINT chk_phase CHECK (projPhase IN ('preliminary', 'intermediate', 'advanced', 'complete'))
 );
 
 CREATE TABLE WorksOn (
